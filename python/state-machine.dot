@@ -1,0 +1,14 @@
+digraph StateMachine {
+    rankdir = LR;
+    labelloc="t"
+    label="Device Status Diagram"
+    fontsize=24
+
+    node [shape=circle,style=filled,color=lightblue] MANUFACTURED
+    node [shape=circle,style=filled,color=lightgreen] REGISTERED
+    node [shape=circle,style=filled,color=grey] USER_ASSOCIATED
+
+    MANUFACTURED -> REGISTERED [label="Provision"]
+    REGISTERED -> USER_ASSOCIATED [label="Associate"]
+    USER_ASSOCIATED -> MANUFACTURED [label="Reset"]
+}
